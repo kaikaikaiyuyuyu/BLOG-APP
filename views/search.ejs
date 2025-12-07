@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>検索結果</title>
+</head>
+<body>
+
+  <h2>キーワード検索結果「<%= keyword %>」</h2>
+
+  <% results.forEach(blog => { %>
+    <div style="border:1px solid #ccc; padding:10px; margin:20px 0;">
+      <h3><%= blog.title %></h3>
+      <p>投稿日: <%= blog.date.toISOString().slice(0,10) %></p>
+      <p><%= blog.content %></p>
+    </div>
+  <% }) %>
+
+  <form action="/" method="GET">
+    <button type="submit">戻る</button>
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!--views/delete.ejs-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DELETE</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>学生情報削除</h1>
+    <form action="/delete" method="POST">
+      ID:<input type="number" name="id" required /><br />
+      <button type="submit">削除</button>
+    </form>
+  </body>
+</html>

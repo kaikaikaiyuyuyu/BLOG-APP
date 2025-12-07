@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Blog</title>
+</head>
+<body>
+  <h1>My Blog</h1>
+
+  <!-- 検索フォーム -->
+  <form action="/search" method="POST">
+    キーワード検索：<input type="text" name="keyword">
+    <button type="submit">検索</button>
+  </form>
+
+  <hr>
+
+  <h2>新しいブログを追加</h2>
+  <form action="/" method="POST">
+    タイトル:<br>
+    <input type="text" name="title"><br>
+
+    投稿日:<br>
+    <input type="date" name="date"><br>
+
+    内容:<br>
+    <textarea name="content"></textarea><br>
+
+    <button type="submit">追加</button>
+  </form>
+
+  <hr>
+
+  <!-- 一覧表示 -->
+  <% blogs.forEach(blog => { %>
+    <div style="border:1px solid #ccc; padding:10px; margin:20px 0;">
+      <h3><%= blog.title %></h3>
+      <p>投稿日: <%= blog.date.toISOString().slice(0,10) %></p>
+      <p><%= blog.content %></p>
+    </div>
+  <% }) %>
+
+</body>
+</html>

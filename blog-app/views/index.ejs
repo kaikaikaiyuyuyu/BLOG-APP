@@ -1,0 +1,19 @@
+<!--views/index.ejs-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ユーザー情報</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <% for(let i = 0; i < students.length; i++) { %>
+    <div class="card">
+      <p>ID: <%= students[i].id %></p>
+      <h1><%= students[i].name %></h1>
+      <p>
+        学籍番号: <%= students[i].studentNum %>　学年: <%= students[i].grade %>
+      </p>
+    </div>
+    <% } %>
+  </body>
+</html>
